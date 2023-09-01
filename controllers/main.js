@@ -268,11 +268,7 @@ function addToCart(id) {
         let spget = result.data.content;
         let sp = new SanPham(spget.id, spget.name, spget.image, spget.price, quantityOrder);
 
-        let HaveId = dssp.mangSP.find(function (sp) {
-            return sp.id == spget.id
-        })
 
-        let spdaCo = { ...HaveId }
 
         if (dssp.mangSP.length < 0) {
             dssp.themSP(sp);
@@ -282,6 +278,11 @@ function addToCart(id) {
             hienThiCart(dssp.mangSP);
             setLocalSorage();
         } else {
+            let HaveId = dssp.mangSP.find(function (sp) {
+                return sp.id == spget.id
+            })
+            let spdaCo = { ...HaveId }
+
             if (spget.id == spdaCo.id) {
                 let quantityUpdate = Number(spdaCo.quantityOrder) + Number(quantityOrder);
                 let spUpdate = new SanPham(spget.id, spget.name, spget.image, spget.price, quantityUpdate)
