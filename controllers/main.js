@@ -139,7 +139,7 @@ window.onload = function () {
         })
         document.getElementById("showSP").innerHTML = content;
     }
-
+    tongTien();
 }
 
 // ===================================================================
