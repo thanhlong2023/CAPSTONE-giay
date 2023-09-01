@@ -1,11 +1,5 @@
 function DanhSachSanPham() {
-    this.mangSP = [{
-        "id": 6,
-        "name": "Adidas Tenisky Super Star",
-        "img": "https://shop.cyberlearn.vn/images/adidas-tenisky-super-star.png",
-        "price": 250,
-        "quantityOrder": "1"
-    }];
+    this.mangSP = [];
 
     this.themSP = function (sp) {
         this.mangSP.push(sp);
@@ -24,5 +18,5 @@ function DanhSachSanPham() {
         })
         this.mangSP.splice(indexXoa, 1);
     }
-
+   
 }
