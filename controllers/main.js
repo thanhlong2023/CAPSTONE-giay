@@ -256,8 +256,11 @@ function setLocalSorage() {
     localStorage.setItem("DSSP", JSON.stringify(dssp.mangSP));
 }
 function getLocalStorage() {
-    dssp.mangSP = JSON.parse(localStorage.getItem("DSSP"));
-    hienThiCart(dssp.mangSP)
+    if (localStorage.getItem("DSSP") != null) {
+        dssp.mangSP = JSON.parse(localStorage.getItem("DSSP"));
+        hienThiCart(dssp.mangSP)
+    }
+
 }
 
 let dssp = new DanhSachSanPham();
@@ -267,8 +270,6 @@ function addToCart(id) {
     getSP(id).then((result) => {
         let spget = result.data.content;
         let sp = new SanPham(spget.id, spget.name, spget.image, spget.price, quantityOrder);
-
-
 
         if (dssp.mangSP.length < 0) {
             dssp.themSP(sp);
