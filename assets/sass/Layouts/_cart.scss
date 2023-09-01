@@ -1,0 +1,79 @@
+.cart {
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    table {
+        width: 100%;
+    }
+    #tbody {
+        td {
+            border-bottom: 1px solid #ddd;
+            padding: 15px 0;
+        }
+    }
+
+    .anhSP {
+        display: flex;
+        align-items: center;
+    }
+    #soLuong {
+        width: 30px;
+        outline: none;
+    }
+    .btnXoa {
+        cursor: pointer;
+    }
+    .price-total {
+        text-align: right;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    position: fixed;
+    height: 100vh;
+
+    right: -100%;
+    top: 0;
+    background-color: rgba(16, 17, 16, 0.838);
+    padding: 12px 20px;
+    z-index: 500;
+    overflow-y: scroll;
+    transition: all 0.5s;
+    color: white;
+    font-weight: 300;
+    font-size: 17px;
+    .soLuongCart {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+}
+.closeDIV {
+    display: flex;
+    justify-content: center;
+}
+.close {
+    width: 50px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: rgba(16, 17, 16, 0.598);
+    color: white;
+    cursor: pointer;
+}
+@media (max-width: 1200px) {
+    .cart {
+        width: 50%;
+        overflow-y: scroll;
+    }
+}
+@media (max-width: 768px) {
+    .cart {
+        width: 100%;
+        overflow-y: scroll;
+    }
+}

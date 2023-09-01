@@ -1,0 +1,26 @@
+.backToTop {
+    color: black;
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+    border: 1px solid #605b5b;
+    line-height: 50px;
+    text-align: center;
+    display: block;
+    position: fixed;
+
+    right: 15px;
+    bottom: 15px;
+
+    transition: all 0.2s;
+
+    visibility: hidden;
+    opacity: 0;
+}
+
+
+.cd-top--is-visible {
+    visibility: visible;
+    opacity: 1;
+}
