@@ -371,7 +371,7 @@ function chotDon() {
     setLocalSorage();
 
     setTimeout(function () {
-        document.querySelector(".cart").style.display = "none";
+        document.querySelector(".cart").style.right = "-100%";
     }, 3000);
 
 
