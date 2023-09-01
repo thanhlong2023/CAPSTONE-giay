@@ -267,7 +267,7 @@ function addToCart(id) {
     getSP(id).then((result) => {
         let spget = result.data.content;
         let sp = new SanPham(spget.id, spget.name, spget.image, spget.price, quantityOrder);
-
+console.log(sp);
 
 
         if (dssp.mangSP.length < 0) {
