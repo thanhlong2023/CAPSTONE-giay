@@ -25,6 +25,16 @@
 
     <!-- main css  -->
     <link rel="stylesheet" href="./assets/css/main.css">
+
+    <script>
+        function goToLoginPage() {
+            window.location.href = "views/login.html";
+        }
+
+        function goToSignupPage() {
+            window.location.href = "views/signup.html";
+        }
+    </script>
 </head>
 
 <body>
@@ -38,8 +48,8 @@
             </div>
 
             <div class="top__user">
-                <button id="dangNhap" class="btn">Đăng nhập</button>
-                <button id="dangKy" class="btn">Đăng ký</button>
+                <button type="button" class="btn btn-danger" onclick="goToLoginPage()">Đăng Nhập</button>
+                <button class="btn btn-success" type="button" onclick="goToSignupPage()">Đăng ký</button>
             </div>
         </div>
         <div class="container">
@@ -219,6 +229,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js"
         integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+
 
     <script src="./services/callAIP.js"></script>
 
