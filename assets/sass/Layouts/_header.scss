@@ -1,4 +1,8 @@
 header {
+    a{
+        text-decoration: none;
+        font-size: 12px;
+    }
     .header-ngoai {
         background-color: black;
     }
@@ -25,6 +29,10 @@ header {
         }
     }
     .header__menu {
+        a{
+            font-size: 16px;
+            font-weight: 500;
+        }
         .carts {
             margin-right: 20px;
             position: relative;

@@ -38,6 +38,10 @@ ul {
   padding: 0;
 }
 
+header a {
+  text-decoration: none;
+  font-size: 12px;
+}
 header .header-ngoai {
   background-color: black;
 }
@@ -61,6 +65,10 @@ header .header__top button {
   background-color: black;
   color: white;
   border: none;
+}
+header .header__menu a {
+  font-size: 16px;
+  font-weight: 500;
 }
 header .header__menu .carts {
   margin-right: 20px;
