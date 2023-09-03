@@ -1,3 +1,4 @@
+//Lấy toàn bộ sản phẩm
 function CallAPI() {
     return axios({
         method: 'get',
@@ -5,6 +6,8 @@ function CallAPI() {
     })
 
 }
+
+//Lấy sản phẩm theo id
 function getSP(id) {
     return axios({
         method: 'get',
