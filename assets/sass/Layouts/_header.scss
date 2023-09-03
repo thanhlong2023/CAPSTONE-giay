@@ -1,4 +1,7 @@
 header {
+    .header-ngoai {
+        background-color: black;
+    }
     .container {
         border-bottom: 1px solid #abb8c3;
     }
@@ -8,6 +11,8 @@ header {
         background-color: black;
         color: white;
         align-items: center;
+        width: 90%;
+        margin: 0 auto;
 
         h3 {
             font-size: 14px;
@@ -16,6 +21,7 @@ header {
         button {
             background-color: black;
             color: white;
+            border: none;
         }
     }
     .header__menu {

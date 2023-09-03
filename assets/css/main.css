@@ -38,6 +38,9 @@ ul {
   padding: 0;
 }
 
+header .header-ngoai {
+  background-color: black;
+}
 header .container {
   border-bottom: 1px solid #abb8c3;
 }
@@ -47,6 +50,8 @@ header .header__top {
   background-color: black;
   color: white;
   align-items: center;
+  width: 90%;
+  margin: 0 auto;
 }
 header .header__top h3 {
   font-size: 14px;
@@ -55,6 +60,7 @@ header .header__top h3 {
 header .header__top button {
   background-color: black;
   color: white;
+  border: none;
 }
 header .header__menu .carts {
   margin-right: 20px;
