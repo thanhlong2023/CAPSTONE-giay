@@ -62,7 +62,9 @@ header {
     }
     @media (max-width: 991.98px) {
         .header__top {
-            display: none;
+            h3 {
+                display: none;
+            }
         }
     }
 }
