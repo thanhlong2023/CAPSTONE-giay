@@ -320,7 +320,7 @@ function addToCart(id) {
 
             if (dssp.mangSP.length < 0) {
                 dssp.themSP(sp);
-
+                alert("Thêm sản phẩm thành công")
                 tongTien();
 
                 hienThiCart(dssp.mangSP);
@@ -336,7 +336,7 @@ function addToCart(id) {
                     let spUpdate = new SanPham(spget.id, spget.name, spget.image, spget.price, quantityUpdate)
 
                     dssp.capNhatSL(spUpdate);
-
+                    alert("Thêm sản phẩm thành công")
                     tongTien();
 
                     setLocalSorage();
@@ -344,7 +344,7 @@ function addToCart(id) {
 
                 } else {
                     dssp.themSP(sp);
-
+                    alert("Thêm sản phẩm thành công")
                     tongTien();
                     hienThiCart(dssp.mangSP);
                     setLocalSorage();
