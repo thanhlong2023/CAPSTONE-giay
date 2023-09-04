@@ -26,15 +26,6 @@
     <!-- main css  -->
     <link rel="stylesheet" href="./assets/css/main.css">
 
-    <script>
-        function goToLoginPage() {
-            window.location.href = "views/login.html";
-        }
-
-        function goToSignupPage() {
-            window.location.href = "views/signup.html";
-        }
-    </script>
 </head>
 
 <body>
@@ -49,8 +40,11 @@
                 </div>
 
                 <div class="top__user">
-                    <button type="button" class="btn btn-light"><a href="./views/login.html">Đăng Nhập</a></button>
-                    <button class="btn btn-light" type="button"><a href="./views/signup.html">Đăng ký</a></button>
+                    <button type="button" class="btn btn-light"><a href="./views/login.html" id="btnDN">Đăng
+                            Nhập</a></button>
+                    <button class="btn btn-light" type="button" id="btnDK"><a href="./views/signup.html">Đăng
+                            ký</a></button>
+                    <button class="btn btn-light" type="button" onclick="dangXuat()" id="btnDX">Đăng xuất</button>
                 </div>
             </div>
         </div>
@@ -263,7 +257,9 @@
 
     <script src="./models/SanPham.js"></script>
 
-    <script src="./controllers/trangChu.js"></script>
+    <script src="./controllers/dangXuat.js"></script>
+
+    <script src="./controllers/main.js"></script>
 </body>
 
 </html>

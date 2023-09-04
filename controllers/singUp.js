@@ -44,6 +44,7 @@ signupButton.addEventListener("click", (event) => {
             alert("Đăng ký thành công");
             // Chuyển hướng người dùng đến trang chủ
             window.location.href = "/";
+            
         } else if (request.status === 400) {
             // Đăng ký thất bại
             alert("Đăng ký thất bại");
