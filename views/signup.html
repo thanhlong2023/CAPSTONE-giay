@@ -20,41 +20,44 @@
 <body>
   <div id="inputUser">
     <form action="" id="form-login">
-      <h1 class="form-User-heading">Form đăng ký</h1>
+      <h1 class="form-User-heading">ĐĂNG KÝ</h1>
       <div class="form-group">
         <i class="far fa-user"></i>
-        <input type="text" class="form-input" placeholder="Email">
+        <input type="text" class="form-input" placeholder="Email" id="email">
       </div>
       <div class="form-group">
         <i class="fas fa-key"></i>
-        <input type="password" class="form-input" placeholder="Mật khẩu">
+        <input type="password" class="form-input" placeholder="Mật khẩu" id="matKhau">
         <div id="eye">
           <i class="far fa-eye"></i>
         </div>
       </div>
       <div class="form-group">
-        <i class="fas fa-key"></i>
-        <input type="text" class="form-input" placeholder="Name">
+        <i>A-z</i>
+        <input type="text" class="form-input" placeholder="Name" id="name">
       </div>
       <div class="form-group">
-        <i class="fas fa-key"></i>
-        <input type="tel" class="form-input" placeholder="Phone">
+        <i class="fa fa-phone"></i>
+        <input type="tel" class="form-input" placeholder="Phone" id="sdt">
 
       </div>
       <div class="form-group gioiTinh">
         <fieldset>
           <legend>Giới tính của bạn</legend>
           <div>
-            <input type="radio" id="huey" name="drone" value="true" checked />
+            <input type="radio" id="huey" name="gender" value="true" class="nam" />
             <label for="huey">Nam</label>
-            <input type="radio" id="dewey" name="drone" value="false" />
+            <input type="radio" id="dewey" name="gender" value="false" class="nu" />
             <label for="dewey">Nữ</label>
           </div>
         </fieldset>
 
 
       </div>
-      <input type="submit" value="ĐĂNG KÝ" class="form-submit">
+      <input type="button" value="ĐĂNG KÝ" class="form-submit" id="dangKy">
+      <div class="ct">
+        <p class="chuyenTrang">Bạn đã có tài khoản ? <a href="./login.html" style="color: aquamarine;">Đăng nhập</a></p>
+      </div>
     </form>
   </div>
 
@@ -63,7 +66,12 @@
     integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+  <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+
   <script src="../assets/sass/Vendor/eye.js"></script>
+
+
+  <script src="../controllers/singUp.js"></script>
 </body>
 
 

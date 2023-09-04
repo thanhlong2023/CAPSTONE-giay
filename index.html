@@ -101,8 +101,29 @@
 
     </section>
 
-    <section class="product">
+    <section class="product pt-5">
         <div class="container">
+            <div class="product__header pb-3">
+                <h4>Sản Phẩm Của Chúng Tôi</h4>
+                <h6>Mẫu giày Nike, Adidas, các sản phẩm… mới nhất 2023 với giá cực tốt</h6>
+            </div>
+
+            <div class="row">
+                <div class="d-flex justify-content-center">
+
+                    <div class="option-item">
+                        <select name="hang" id="hang" onchange="laySPbyCategory()">
+                            <option value="1">Hãng</option>
+                            <option value="ADIDAS">Adidas</option>
+                            <option value="VANS CONVERSE">Van Converse</option>
+                            <option value="NIKE">Nike</option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+            </div>
             <div class="product-items row" id="showSP">
                 <div class="product-item col-6 col-md-3">
                     <div class="item">
@@ -242,7 +263,7 @@
 
     <script src="./models/SanPham.js"></script>
 
-    <script src="./controllers/main.js"></script>
+    <script src="./controllers/trangChu.js"></script>
 </body>
 
 </html>

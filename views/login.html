@@ -15,26 +15,31 @@
   <!-- main css  -->
   <link rel="stylesheet" href="../assets/css/main.css">
 
-  <title>Form login unitop.vn</title>
+  <title>Đăng Nhập</title>
 </head>
 
 <body>
   <div id="inputUser">
     <form action="" id="form-login">
-      <h1 class="form-User-heading">Form đăng nhập</h1>
+      <h1 class="form-User-heading">ĐĂNG NHẬP</h1>
       <div class="form-group">
         <i class="far fa-user"></i>
-        <input type="text" class="form-input" placeholder="Tên đăng nhập">
+        <input type="text" class="form-input" placeholder="Tên đăng nhập" id="userName">
       </div>
       <div class="form-group">
         <i class="fas fa-key"></i>
-        <input type="password" class="form-input" placeholder="Mật khẩu">
+        <input type="password" class="form-input" placeholder="Mật khẩu" id="userPassword">
         <div id="eye">
           <i class="far fa-eye"></i>
         </div>
       </div>
-      <input type="submit" value="Đăng nhập" class="form-submit">
+      <input type="button" value="Đăng nhập" class="form-submit" id="dangNhap">
+      <div class="ct">
+        <p class="chuyenTrang">Nếu chưa có tài khoản ? <a href="./signup.html" style="color: aquamarine;">Đăng ký</a>
+        </p>
+      </div>
     </form>
+
   </div>
 
 
@@ -43,7 +48,12 @@
     integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+  <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+
   <script src="../assets/sass/Vendor/eye.js"></script>
+
+
+  <script src="../controllers/signIn.js"></script>
 </body>
 
 

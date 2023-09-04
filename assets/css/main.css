@@ -461,4 +461,10 @@ header .header__menu .cart__text {
   justify-content: center;
   border: none;
   color: white;
+}
+#inputUser .ct {
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+  color: white;
 }/*# sourceMappingURL=main.css.map */

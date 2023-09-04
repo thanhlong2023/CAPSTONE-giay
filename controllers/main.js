@@ -2,35 +2,6 @@
 
 // ===========================================================================
 
-function showSP(mang) {
-    var content = "";
-    mang.map(function (sp) {
-        content += `
-    <div class="product-item col-6 col-md-3">
-    <div class="item">
-        <a href="./views/chiTietSP.html?productid=${sp.id}">
-            <img src=${sp.image} alt="">
-        </a>
-    </div>
-    <div class="product-item-text">
-        <h1><a href="./views/chiTietSP.html?productid=${sp.id}">Adidas Prophere</a></h1>
-
-        <p><span class="price">500</span>.000 đ</p>
-    </div>
-
-</div>
-    `
-    })
-    document.getElementById("showSP").innerHTML = content;
-}
-function laySP() {
-    CallAPI().then((result) => {
-        showSP(result.data.content)
-    }).catch((error) => {
-        console.log(error);
-    })
-}
-laySP();
 
 // ==================================================================================
 window.onload = function () {
@@ -271,38 +242,47 @@ function addToCart(id) {
         let spget = result.data.content;
         let sp = new SanPham(spget.id, spget.name, spget.image, spget.price, quantityOrder);
 
-        if (dssp.mangSP.length < 0) {
-            dssp.themSP(sp);
+        let status = 200;
 
-            tongTien();
+        if (status == 200) {
 
-            hienThiCart(dssp.mangSP);
-            setLocalSorage();
-        } else {
-            let HaveId = dssp.mangSP.find(function (sp) {
-                return sp.id == spget.id
-            })
-            let spdaCo = { ...HaveId }
-
-            if (spget.id == spdaCo.id) {
-                let quantityUpdate = Number(spdaCo.quantityOrder) + Number(quantityOrder);
-                let spUpdate = new SanPham(spget.id, spget.name, spget.image, spget.price, quantityUpdate)
-
-                dssp.capNhatSL(spUpdate);
-
-                tongTien();
-
-                setLocalSorage();
-                getLocalStorage();
-
-            } else {
+            if (dssp.mangSP.length < 0) {
                 dssp.themSP(sp);
 
                 tongTien();
+
                 hienThiCart(dssp.mangSP);
                 setLocalSorage();
+            } else {
+                let HaveId = dssp.mangSP.find(function (sp) {
+                    return sp.id == spget.id
+                })
+                let spdaCo = { ...HaveId }
+
+                if (spget.id == spdaCo.id) {
+                    let quantityUpdate = Number(spdaCo.quantityOrder) + Number(quantityOrder);
+                    let spUpdate = new SanPham(spget.id, spget.name, spget.image, spget.price, quantityUpdate)
+
+                    dssp.capNhatSL(spUpdate);
+
+                    tongTien();
+
+                    setLocalSorage();
+                    getLocalStorage();
+
+                } else {
+                    dssp.themSP(sp);
+
+                    tongTien();
+                    hienThiCart(dssp.mangSP);
+                    setLocalSorage();
+                }
             }
+        } else {
+            alert("Vui lòng đăng nhập để mua sản phẩm")
         }
+
+
     }).catch(function (error) {
         console.log(error);
     })
@@ -382,3 +362,5 @@ window.getSize = getSize;
 function getSize(size) {
     document.querySelector(".size").innerHTML = size;
 }
+// -------------------------
+
