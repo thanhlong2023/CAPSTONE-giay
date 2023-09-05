@@ -7,6 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
+  <!-- bootstrap  -->
+  <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+
   <!-- font awesome  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
@@ -24,8 +27,9 @@
       <h1 class="form-User-heading">ĐĂNG NHẬP</h1>
       <div class="form-group">
         <i class="far fa-user"></i>
-        <input type="text" class="form-input" placeholder="Tên đăng nhập" id="userName">
+        <input type="text" class="form-input" placeholder="Tên đăng nhập (email)" id="userName">
       </div>
+      <p class="text-danger" id="tbUsername"></p>
       <div class="form-group">
         <i class="fas fa-key"></i>
         <input type="password" class="form-input" placeholder="Mật khẩu" id="userPassword">
@@ -33,6 +37,7 @@
           <i class="far fa-eye"></i>
         </div>
       </div>
+      <p class="text-danger" id="tbUserMK"></p>
       <input type="button" value="Đăng nhập" class="form-submit" id="dangNhap">
       <div class="ct">
         <p class="chuyenTrang">Nếu chưa có tài khoản ? <a href="./signup.html" style="color: aquamarine;">Đăng ký</a>
@@ -48,10 +53,16 @@
     integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+  <!-- bootstrap  -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
   <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
 
   <script src="../assets/sass/Vendor/eye.js"></script>
 
+  <script src="../services/callAIP.js"></script>
+
+  <script src="../models/Validation.js"></script>
 
   <script src="../controllers/signIn.js"></script>
 </body>

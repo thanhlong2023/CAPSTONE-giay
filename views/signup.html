@@ -11,6 +11,10 @@
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+  <!-- bootstrap  -->
+  <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+
+
   <!-- main css  -->
   <link rel="stylesheet" href="../assets/css/main.css">
 
@@ -25,6 +29,7 @@
         <i class="far fa-user"></i>
         <input type="text" class="form-input" placeholder="Email" id="email">
       </div>
+      <p class="text-danger" id="tbDKemail"></p>
       <div class="form-group">
         <i class="fas fa-key"></i>
         <input type="password" class="form-input" placeholder="Mật khẩu" id="matKhau">
@@ -32,15 +37,17 @@
           <i class="far fa-eye"></i>
         </div>
       </div>
+      <p class="text-danger" id="tbDKMK"></p>
       <div class="form-group">
         <i>A-z</i>
         <input type="text" class="form-input" placeholder="Name" id="name">
       </div>
+      <p class="text-danger" id="tbDKname"></p>
       <div class="form-group">
         <i class="fa fa-phone"></i>
         <input type="tel" class="form-input" placeholder="Phone" id="sdt">
-
       </div>
+      <p class="text-danger" id="tbDKsdt"></p>
       <div class="form-group gioiTinh">
         <fieldset>
           <legend>Giới tính của bạn</legend>
@@ -51,9 +58,8 @@
             <label for="dewey">Nữ</label>
           </div>
         </fieldset>
-
-
       </div>
+      <p class="text-danger" id="tbDKgioiTinh"></p>
       <input type="button" value="ĐĂNG KÝ" class="form-submit" id="dangKy">
       <div class="ct">
         <p class="chuyenTrang">Bạn đã có tài khoản ? <a href="./login.html" style="color: aquamarine;">Đăng nhập</a></p>
@@ -66,10 +72,17 @@
     integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+  <!-- bootstrap  -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- axios  -->
   <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
 
   <script src="../assets/sass/Vendor/eye.js"></script>
 
+  <script src="../services/callAIP.js"></script>
+
+  <script src="../models/Validation.js"></script>
 
   <script src="../controllers/singUp.js"></script>
 </body>

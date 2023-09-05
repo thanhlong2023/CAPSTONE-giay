@@ -1,56 +1,71 @@
 
 const signupButton = document.querySelector("#dangKy");
-
+let validation = new Validation();
 signupButton.addEventListener("click", (event) => {
     event.preventDefault();
 
     // Nhập dữ liệu đăng ký từ người dùng
-    const email = document.querySelector("#email").value;
-    const password = document.querySelector("#matKhau").value;
-    const name = document.querySelector("#name").value;
+    let email = document.querySelector("#email").value;
+    let password = document.querySelector("#matKhau").value;
+    let name = document.querySelector("#name").value;
     let gender = "";
-    const checkbox = document.getElementsByName("gender")
+    let checkbox = document.getElementsByName("gender")
     for (var i = 0; i < checkbox.length; i++) {
         if (checkbox[i].checked === true) {
             gender = checkbox[i].value;
         }
     }
-    console.log(gender);
-
-    const phone = document.querySelector("#sdt").value;
-
+    let phone = document.querySelector("#sdt").value;
+    console.log("gender", gender);
     // Kiểm tra tính hợp lệ của dữ liệu
+    let isValid = true;
+
+    //email
+    isValid &= validation.checkEmpty(email, "Email không được để trống", "tbDKemail") && validation.checkEmail(email, "Email chưa đúng định dạng", "tbDKemail");
+
+    //mật khẩu
+    isValid &= validation.checkEmpty(password, "Mật khẩu không được để trống", "tbDKMK") && validation.matKhau(password, "Mật khẩu từ 6-10 ký tự, ít nhất 1 chữ cái và 1 số", "tbDKMK");
+
+    //name
+    isValid &= validation.checkEmpty(name, "Tên không được để trống", "tbDKname") && validation.checkName(name, "Tên phải là chữ", "tbDKname");
+
+    //phone
+    isValid &= validation.checkEmpty(phone, "Số điện thoại không được để trống", "tbDKsdt") && validation.checkPhone(phone, "Phone phải là số từ 9 -11 ký tự", "tbDKsdt");
+
+    //gender
+    isValid &= validation.checkGender(gender, "Hãy chọn giới tính của bạn", "tbDKgioiTinh")
 
 
-    // Gửi dữ liệu đăng ký đến API
-    const request = new XMLHttpRequest();
-    request.open("POST", "https://shop.cyberlearn.vn/api/Users/signup");
-    request.setRequestHeader("Content-Type", "application/json");
 
-    const data = JSON.stringify({
-        email: email,
-        password: password,
-        name: name,
-        gender: gender,
-        phone: phone,
-    });
+    if (isValid) {
+        let data = {
+            email: email,
+            password: password,
+            name: name,
+            gender: gender,
+            phone: phone,
+        };
 
-    request.send(data);
+        // Gửi dữ liệu đăng nhập đến API
+        DangKy(data).then((response) => {
+            if (response.status === 200) {
+                // Đăng ký thành công
+                alert("Đăng ký thành công");
+                // console.log(response.data.content.accessToken);
+                localStorage.setItem("token", JSON.stringify(response.data.content.accessToken))
 
-    // Xử lý phản hồi từ API
-    request.onload = () => {
-        if (request.status === 200) {
-            // Đăng ký thành công
-            alert("Đăng ký thành công");
-            // Chuyển hướng người dùng đến trang chủ
-            window.location.href = "/";
-            
-        } else if (request.status === 400) {
-            // Đăng ký thất bại
-            alert("Đăng ký thất bại");
+                window.location.href = "./login.html";
 
-        }
-    };
+            } else {
+                // Đăng ký thất bại
+                alert("Đăng ký thất bại");
+            }
+        }).catch((error) => {
+            alert("Đăng ký thất bại")
+            console.log(error);
+        });
+    }
+
 });
 
 

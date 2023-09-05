@@ -307,7 +307,6 @@ function getLocalStorage() {
 let dssp = new DanhSachSanPham();
 
 
-
 function addToCart(id) {
     var quantityOrder = document.querySelector(".sl").innerHTML;
     getSP(id).then((result) => {
@@ -321,10 +320,11 @@ function addToCart(id) {
             if (dssp.mangSP.length < 0) {
                 dssp.themSP(sp);
                 alert("Thêm sản phẩm thành công")
-                tongTien();
 
+                tongTien();
                 hienThiCart(dssp.mangSP);
                 setLocalSorage();
+
             } else {
                 let HaveId = dssp.mangSP.find(function (sp) {
                     return sp.id == spget.id
@@ -337,10 +337,12 @@ function addToCart(id) {
 
                     dssp.capNhatSL(spUpdate);
                     alert("Thêm sản phẩm thành công")
-                    tongTien();
 
+                    tongTien();
                     setLocalSorage();
+
                     getLocalStorage();
+
 
                 } else {
                     dssp.themSP(sp);
@@ -348,6 +350,7 @@ function addToCart(id) {
                     tongTien();
                     hienThiCart(dssp.mangSP);
                     setLocalSorage();
+
                 }
             }
         } else {
@@ -376,9 +379,9 @@ function hienThiCart(mang) {
     <td>${sp.price}<span>.000 đ</span></td>
     <td>
         <div class="soLuongCart">
-       
+       <button type="button" onclick="renderGiam('${sp.id}')" class="btn btn-light">-</button>
             <p class="slorder">${sp.quantityOrder}</p>
-           
+            <button type="button" onclick="renderTang('${sp.id}')" class="btn btn-light">+</button>
         </div>
     </td>
     <td><button type="button" class="btn btn-danger" onclick="xoaSP('${sp.id}')">X</button></td>
@@ -394,9 +397,10 @@ function xoaSP(maXoa) {
     setLocalSorage();
 
     getLocalStorage();
-
     tongTien();
+
 }
+
 tongTien();
 
 function tongTien() {
@@ -404,7 +408,7 @@ function tongTien() {
     let oder = 0;
     dssp.mangSP.map(function (sp) {
         tong += Number(sp.price) * Number(sp.quantityOrder)
-        oder += sp.quantityOrder
+        oder += Number(sp.quantityOrder)
     })
     document.getElementById("tienThanhToan").innerHTML = tong.toLocaleString()
     document.querySelector(".cart__text").innerHTML = oder;
@@ -420,9 +424,11 @@ function chotDon() {
     }
 
     dssp.mangSP = [];
-    hienThiCart(dssp.mangSP);
     tongTien();
+    hienThiCart(dssp.mangSP);
+
     setLocalSorage();
+
 
     setTimeout(function () {
         document.querySelector(".cart").style.right = "-100%";
@@ -436,6 +442,21 @@ function getSize(size) {
     document.querySelector(".size").innerHTML = size;
 }
 // -------------------------
-
+// render tawng giam soó lượng sp cart 
+window.renderTang = renderTang;
+function renderTang(id) {
+    // console.log(id);
+    dssp.renderSPtang(id);
+    tongTien();
+    hienThiCart(dssp.mangSP);
+    setLocalSorage();
+}
+window.renderGiam = renderGiam;
+function renderGiam(id) {
+    dssp.renderSPgiam(id);
+    tongTien();
+    hienThiCart(dssp.mangSP);
+    setLocalSorage();
+}
 
 
