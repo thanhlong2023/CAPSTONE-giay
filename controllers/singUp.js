@@ -52,7 +52,7 @@ signupButton.addEventListener("click", (event) => {
                 // Đăng ký thành công
                 alert("Đăng ký thành công");
                 // console.log(response.data.content.accessToken);
-                localStorage.setItem("token", JSON.stringify(response.data.content.accessToken))
+             
 
                 window.location.href = "./login.html";
 

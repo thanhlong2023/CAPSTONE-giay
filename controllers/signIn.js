@@ -30,7 +30,7 @@ function dangNhap(event) {
 
                 // console.log(response.data.content.accessToken);
                 localStorage.setItem("token", JSON.stringify(response.data.content.accessToken))
-
+                localStorage.setItem("email", JSON.stringify(response.data.content.email))
 
 
                 window.location.href = "/";
